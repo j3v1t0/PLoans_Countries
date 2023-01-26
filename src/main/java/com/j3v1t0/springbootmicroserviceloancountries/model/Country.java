@@ -1,13 +1,12 @@
 package com.j3v1t0.springbootmicroserviceloancountries.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +21,8 @@ public class Country {
     private String countryName;
     @Column(name = "country_abbreviation", nullable = false, unique = true)
     private String countryAbbreviation;
+
+    @OneToMany(targetEntity = City.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="city_uuid",referencedColumnName = "countryUuid")
+    private List<City> cityList;
 }
