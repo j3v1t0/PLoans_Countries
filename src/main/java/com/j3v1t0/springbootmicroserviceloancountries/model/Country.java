@@ -23,6 +23,6 @@ public class Country {
     private String countryAbbreviation;
 
     @OneToMany(targetEntity = City.class,cascade = CascadeType.ALL)
-    @JoinColumn(name ="city_uuid",referencedColumnName = "countryUuid")
+    @JoinColumn(name ="country_uuid",referencedColumnName = "countryUuid")
     private List<City> cityList;
 }

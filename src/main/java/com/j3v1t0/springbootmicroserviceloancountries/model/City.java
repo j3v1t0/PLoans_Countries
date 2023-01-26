@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "country")
+@Table(name = "city")
 public class City {
 
     @Id
