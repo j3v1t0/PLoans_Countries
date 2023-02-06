@@ -23,4 +23,7 @@ public class City {
     @Column(name = "city_abbreviation", nullable = false)
     private String cityAbbreviation;
 
+/*    @Column(name = "country_uuid")
+    private String countryUuid;*/
+
 }
